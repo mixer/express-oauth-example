@@ -4,7 +4,7 @@
   "description": "An example of how to use express to retrieve a Beam OAuth access token.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ."
   },
   "author": "",
   "license": "MIT",
