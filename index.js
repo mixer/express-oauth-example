@@ -32,7 +32,7 @@ app.get('/callback', (request, reply) => {
 
     oauth.attempt(redirectUri, request.query)
         .then(res => reply.json(oauth.getTokens()))
-        .catch(reply.json);
+        .catch(err => reply.json(err));
 });
 
 app.listen(port, () => {
