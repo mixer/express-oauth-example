@@ -1,21 +1,20 @@
 const express = require('express');
 const BeamClient = require('beam-client-node');
 
-const config = require('./config/config.json');
-const port = config.port || 80;
-const scopes = config.scopes;
+const config = require('config');
+const port = config.get('port') || 80;
+const scopes = config.get('scopes');
 
 const portAddition = port !== 80 ? `:${port}` : '';
-const redirectUri = `${config.baseUrl}${portAddition}/callback`;
-
+const redirectUri = `${config.get('baseUrl')}${portAddition}/callback`;
 const app = express();
 
 function createClient() {
     const client = new BeamClient();
     // Supply the OAuth information to the client.
     client.use('oauth', {
-        clientId: config.clientId,
-        secret: config.clientSecret
+        clientId: config.get('clientId'),
+        secret: config.get('clientSecret'),
     });
     return client;
 }
