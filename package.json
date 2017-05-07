@@ -1,0 +1,16 @@
+{
+  "name": "express-oauth-example",
+  "version": "0.1.0",
+  "description": "An example of how to use express to retrieve a Beam OAuth access token.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "beam-client-node": "^0.13.0",
+    "config": "^1.26.1",
+    "express": "^4.15.2"
+  }
+}
