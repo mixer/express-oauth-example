@@ -9,7 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "beam-client-node": "^0.13.0",
+    "beam-client-node": "^1.0.2",
     "config": "^1.26.1",
     "express": "^4.15.2"
   }

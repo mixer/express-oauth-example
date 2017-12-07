@@ -1,5 +1,5 @@
 const express = require('express');
-const BeamClient = require('beam-client-node');
+const Mixer = require('beam-client-node');
 
 const config = require('config');
 const port = config.get('port') || 80;
@@ -10,12 +10,12 @@ const redirectUri = `${config.get('baseUrl')}${portAddition}/callback`;
 const app = express();
 
 function createClient() {
-    const client = new BeamClient();
+    const client = new Mixer.Client(new Mixer.DefaultRequestRunner());
     // Supply the OAuth information to the client.
-    client.use('oauth', {
+    client.use(new Mixer.OAuthProvider(client, {        
         clientId: config.get('clientId'),
         secret: config.get('clientSecret'),
-    });
+    }));
     return client;
 }
 
